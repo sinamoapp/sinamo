@@ -6,6 +6,8 @@
   <meta name="theme-color" content="#09090d">
   <meta name="description" content="سینامو؛ دنیای فیلم و سریال همیشه همراه شما. تماشای آنلاین و دانلود برای تماشای آفلاین.">
   <title>سینامو | دنیای فیلم و سریال</title>
+  <link rel="icon" href="https://play-lh.googleusercontent.com/49NYcY2Te70CmZfSwo1Q8iqD-AcrV7PEapzDWKNzkQy5Old6-GxbzvXW3XW8QUlfsWLqnH-hPKD4niLcoJq5GA=w96-h96" type="image/png">
+  <link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/49NYcY2Te70CmZfSwo1Q8iqD-AcrV7PEapzDWKNzkQy5Old6-GxbzvXW3XW8QUlfsWLqnH-hPKD4niLcoJq5GA=w180-h180">
   <link rel="preconnect" href="https://play-lh.googleusercontent.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +39,27 @@
     .screens{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:center}.screens img{width:100%;height:360px;object-fit:cover;border-radius:18px;border:1px solid #ffffff25;box-shadow:0 18px 45px #0008;transition:.3s}.screens img:hover{transform:translateY(-8px) scale(1.02)}
     .banner{border:1px solid #f3263840;border-radius:28px;padding:45px;background:radial-gradient(circle at 10% 10%,#e51b332c,transparent 45%),linear-gradient(120deg,#171118,#101015);display:flex;align-items:center;justify-content:space-between;gap:25px}.banner h2{font-size:32px;margin:0 0 10px}.banner p{color:#b9b5c0;margin:0;line-height:1.9}
     footer{border-top:1px solid var(--line);padding:28px 0;color:#898691;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}
+
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .feature{transition:transform .3s ease,border-color .3s ease,background .3s ease}
+    .feature:hover{transform:translateY(-7px);border-color:#f3263866;background:linear-gradient(145deg,#20151c,#111116)}
+    .hero .eyebrow{animation:pulseGlow 3s ease-in-out infinite}
+    @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 #f3263800}50%{box-shadow:0 0 26px #f3263828}}
+    .rating-strip{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .rating-pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:12px;background:#ffffff09;border:1px solid var(--line);font-size:12px;color:#d4d0d9}
+    .rating-pill strong{color:#fff}
+    .faq-list{max-width:820px;margin:auto;display:grid;gap:12px}
+    .faq-list details{background:#141319;border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+    .faq-list summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:15px}
+    .faq-list summary::-webkit-details-marker{display:none}
+    .faq-list summary:after{content:"＋";color:#ff5968;font-size:19px}
+    .faq-list details[open] summary:after{content:"−"}
+    .faq-list details p{color:#aaa7b2;line-height:2;margin:14px 0 0;font-size:13px}
+    .mobile-download{display:none}
+    @media(max-width:800px){.mobile-download{display:flex;position:fixed;z-index:20;bottom:12px;right:14px;left:14px;box-shadow:0 12px 35px #000b}.mobile-download .btn{width:100%;padding:15px}.foot{padding-bottom:75px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal,.feature,.screens img{transition:none}.hero .eyebrow{animation:none}}
+
     @media(max-width:800px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:55px 0 20px;text-align:center}.lead{margin:auto}.actions,.meta{justify-content:center}.visual{min-height:420px}.poster{width:235px}.phone{width:145px;right:8%}.features{grid-template-columns:1fr 1fr}.screens{grid-template-columns:1fr 1fr}.screens img{height:300px}.banner{display:block;text-align:center}.banner .btn{margin-top:22px}}
     @media(max-width:480px){.wrap{width:min(100% - 28px,1160px)}.brand{font-size:19px}.hero{padding-top:42px}h1{font-size:43px}.lead{font-size:14px}.visual{min-height:365px}.poster{width:205px}.phone{width:120px}.float-tag{font-size:11px;left:-3px}.features{grid-template-columns:1fr}.screens img{height:245px}.section{padding:60px 0}.banner{padding:28px 20px}.banner h2{font-size:25px}.foot{flex-direction:column;text-align:center}}
   </style>
@@ -44,7 +67,7 @@
 <body>
   <header class="wrap nav">
     <a class="brand" href="#"><img src="https://play-lh.googleusercontent.com/49NYcY2Te70CmZfSwo1Q8iqD-AcrV7PEapzDWKNzkQy5Old6-GxbzvXW3XW8QUlfsWLqnH-hPKD4niLcoJq5GA=w240-h240" alt="لوگوی سینامو"><span>سینامو<small>CINAMO</small></span></a>
-    <nav class="navlinks"><a href="#features">امکانات</a><a href="#screens">تصاویر برنامه</a><a href="#download">دریافت برنامه</a></nav>
+    <nav class="navlinks"><a href="#features">امکانات</a><a href="#screens">تصاویر برنامه</a><a href="#faq">سؤالات متداول</a><a href="#download">دریافت برنامه</a></nav>
     <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.developerkashefsinamo.sinamo" target="_blank" rel="noopener">دریافت سینامو ↗</a>
   </header>
 
@@ -59,6 +82,10 @@
           <a class="btn btn-ghost" href="#screens">مشاهده تصاویر برنامه</a>
         </div>
         <div class="meta"><span>🎬 <b>فیلم و سریال</b></span><span>📥 <b>تماشای آفلاین</b></span><span>✨ <b>محتوای به‌روز</b></span></div>
+        <div class="rating-strip">
+          <a class="rating-pill" href="https://play.google.com/store/apps/details?id=com.developerkashefsinamo.sinamo" target="_blank" rel="noopener">⭐ <strong>امتیاز و نظرات کاربران</strong> در گوگل‌پلی ↗</a>
+          <span class="rating-pill">✓ دریافت از منبع رسمی</span>
+        </div>
       </div>
       <div class="visual">
         <div class="glow"></div>
@@ -68,21 +95,21 @@
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section reveal" id="features">
       <div class="wrap">
         <div class="section-head"><div class="kicker">CINAMO EXPERIENCE</div><h2>سرگرمی، به سادگی یک لمس</h2><p>همه‌چیز برای یک تجربه تماشای لذت‌بخش آماده است.</p></div>
         <div class="features">
-          <article class="feature"><div class="ico">🎞️</div><h3>دنیایی از فیلم و سریال</h3><p>مجموعه‌ای متنوع از آثار ایرانی و خارجی، در ژانرهای مختلف و برای سلیقه‌های متفاوت.</p></article>
-          <article class="feature"><div class="ico">🎙️</div><h3>دوبله‌های جذاب</h3><p>از تماشای آثار منتخب با دوبله‌های اختصاصی و تجربه‌ای دلنشین‌تر لذت ببر.</p></article>
-          <article class="feature"><div class="ico">📥</div><h3>دانلود و تماشای آفلاین</h3><p>محتوای موردعلاقه‌ات را دانلود کن و هر زمان خواستی، حتی بدون اینترنت تماشا کن.</p></article>
-          <article class="feature"><div class="ico">🔄</div><h3>محتوای به‌روز</h3><p>با آثار تازه همراه باش و همیشه انتخاب‌های جدیدی برای تماشا داشته باش.</p></article>
-          <article class="feature"><div class="ico">🌍</div><h3>همراه تو، همه‌جا</h3><p>هر زمان و هرجا که خواستی، به دنیای سرگرمی خودت سر بزن.</p></article>
-          <article class="feature"><div class="ico">❤️</div><h3>برای هر سلیقه‌ای</h3><p>از اکشن و هیجان تا عاشقانه، کمدی، ترسناک و درام؛ انتخاب با توست.</p></article>
+          <article class="feature reveal"><div class="ico">🎞️</div><h3>دنیایی از فیلم و سریال</h3><p>مجموعه‌ای متنوع از آثار ایرانی و خارجی، در ژانرهای مختلف و برای سلیقه‌های متفاوت.</p></article>
+          <article class="feature reveal"><div class="ico">🎙️</div><h3>دوبله‌های جذاب</h3><p>از تماشای آثار منتخب با دوبله‌های اختصاصی و تجربه‌ای دلنشین‌تر لذت ببر.</p></article>
+          <article class="feature reveal"><div class="ico">📥</div><h3>دانلود و تماشای آفلاین</h3><p>محتوای موردعلاقه‌ات را دانلود کن و هر زمان خواستی، حتی بدون اینترنت تماشا کن.</p></article>
+          <article class="feature reveal"><div class="ico">🔄</div><h3>محتوای به‌روز</h3><p>با آثار تازه همراه باش و همیشه انتخاب‌های جدیدی برای تماشا داشته باش.</p></article>
+          <article class="feature reveal"><div class="ico">🌍</div><h3>همراه تو، همه‌جا</h3><p>هر زمان و هرجا که خواستی، به دنیای سرگرمی خودت سر بزن.</p></article>
+          <article class="feature reveal"><div class="ico">❤️</div><h3>برای هر سلیقه‌ای</h3><p>از اکشن و هیجان تا عاشقانه، کمدی، ترسناک و درام؛ انتخاب با توست.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="screens">
+    <section class="section reveal" id="screens">
       <div class="wrap">
         <div class="section-head"><div class="kicker">TAKE A LOOK</div><h2>نگاهی به فضای سینامو</h2><p>چند قاب از تجربه‌ای که در انتظارت است.</p></div>
         <div class="screens">
@@ -94,11 +121,36 @@
       </div>
     </section>
 
-    <section class="wrap section" id="download">
+
+    <section class="section reveal" id="faq">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">HELP CENTER</div><h2>سؤالات پرتکرار</h2><p>پاسخ چند سؤال درباره دریافت و استفاده از سینامو.</p></div>
+        <div class="faq-list">
+          <details><summary>از کجا سینامو را دانلود کنم؟</summary><p>برای دریافت نسخه رسمی، روی دکمه‌های دانلود بزنید تا به صفحه سینامو در Google Play منتقل شوید.</p></details>
+          <details><summary>آیا نصب برنامه رایگان است؟</summary><p>اطلاعات به‌روز درباره هزینه‌ها و شرایط استفاده را در صفحه رسمی برنامه در گوگل‌پلی بررسی کنید.</p></details>
+          <details><summary>چطور از نسخه جدید برنامه مطلع شوم؟</summary><p>صفحه سینامو را در گوگل‌پلی دنبال کنید و در صورت ارائه به‌روزرسانی، برنامه را از همان‌جا به‌روز کنید.</p></details>
+          <details><summary>اگر در نصب یا اجرای برنامه مشکل داشتم چه کار کنم؟</summary><p>ابتدا اتصال اینترنت و سازگاری دستگاه را بررسی کنید. همچنین می‌توانید از بخش پشتیبانی یا اطلاعات تماس درج‌شده در صفحه گوگل‌پلی کمک بگیرید.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section reveal" id="download">
       <div class="banner"><div><div class="kicker">YOUR NEXT MOVIE NIGHT</div><h2>آماده‌ای؟ سینامو منتظرته.</h2><p>همین حالا از گوگل‌پلی دریافتش کن و ماجراجویی بعدی‌ات را شروع کن.</p></div><a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.developerkashefsinamo.sinamo" target="_blank" rel="noopener">دریافت رایگان از گوگل‌پلی ↗</a></div>
     </section>
   </main>
+  <a class="mobile-download btn btn-primary" href="https://play.google.com/store/apps/details?id=com.developerkashefsinamo.sinamo" target="_blank" rel="noopener">⬇ دریافت رایگان سینامو از گوگل‌پلی</a>
   <footer><div class="wrap foot"><span>© <span id="year"></span> سینامو | تمامی حقوق محفوظ است.</span><a href="https://play.google.com/store/apps/details?id=com.developerkashefsinamo.sinamo" target="_blank" rel="noopener">صفحه رسمی سینامو در Google Play</a></div></footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.12});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
